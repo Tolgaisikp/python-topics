@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %} <link rel = "stylesheet" href="{% static 'blog/css/style.css' %}"> {% endblock css_files %}
+
+{% block title %}Homepage{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-2">
+            {% include 'partials/_categories.html' %}
+        </div>
+        <div class="col-10">
+            <h1>Homepage</h1> 
+            {% for blog in blogs %}
+                {% if blog.is_home %}
+                    {% include 'blog/partials/_blog.html' %}
+                {% endif %}
+            {% endfor %} <!--blogs view içinden yolladığımız context verisidir-->
+        </div>
+    </div>
+</div>
+
+
+<!--<img src="{%static 'blog/img/django.png' %}" alt=""> -->
+
+{% endblock content %}
+
+{% block js_files %}{% endblock js_files %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blogs{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-2">
+            {% include 'partials/_categories.html' %}
+        </div>
+        <div class="col-10">
+            <h1>Blogs</h1> 
+            {% for blog in blogs %}
+                {% include 'blog/partials/_blog.html' %}
+            {% endfor %} <!--blogs view içinden yolladığımız context verisidir-->
+        </div>
+    </div>
+</div>
+
+{% comment %} <img src="{%static 'img/django.png' %}" alt=""> <!-- ana root içindeki static--> {% endcomment %}
+
+{% endblock content %}
+
+{% block js_files %}<!-- js dosyaları tanımlanacaksa bu kısımda belirtiriz (script)-->
+
+{% endblock js_files %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% block title %}Block Details{% endblock title %} {% block content %}
+{% load static %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-2">
+            {% include 'partials/_categories.html' %}
+        </div>
+        <div class="col-10">
+            <h1> BLOG DETAILS: {{blog.title}}</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'blog/img/'|add:blog.image %}" alt="" class="img-fluid pt-2">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body ">
+                        <p class="card-text text-sm-start">
+                            {{blog.content}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %} {% block js_files %} {% endblock js_files %}
