@@ -1,0 +1,65 @@
+let {PythonShell} = require('python-shell')
+
+const model =  {"PN": null,
+"AA": "STS51b06010220",
+"DT": "11042022",
+"TM": "123626",
+"DK": 71,
+"SD": 7,
+"ND": 87,
+"CD": 404,
+"VD": 84,
+"MD": 0,
+"LD": 0,
+"PD": 39,
+"ID": 0,
+"OD": 0,
+"KD": 0,
+"UD": 7,
+"ED": 0,
+"BD": 0,
+"FD": 0,
+"ZD": null,
+"GD": 0,
+"D1": 0,
+"D2": 0,
+"D3": 0,
+"KE": "40.9652857",
+"KB": "29.0595285",
+"IK": 89,
+"SI": 14,
+"NI": 53,
+"CI": 400,
+"VI": 58,
+"MI": 0,
+"LI": 0,
+"PI": 1,
+"II": 0,
+"OI": 0,
+"KX": 0,
+"UX": 14,
+"EI": 0,
+"BI": 0,
+"FI": 0,
+"ZI": 0,
+"GI": 0,
+"I1": 0,
+"I2": 0,
+"I3": 0,
+"DI": false,
+"RI": false,
+"O1": 0,
+"O2": 0,
+"O3": 0,
+"RecordId": 29126843,
+"stamp": {
+    "$date": "2022-04-11T09:36:25.255Z"
+},
+"__v": 0}
+
+      
+let options2 = {args:[JSON.stringify(model)]}
+
+PythonShell.run("public/python_utils/add_data/main.py", options2, function(err, results){
+    console.log(results[0])
+})
